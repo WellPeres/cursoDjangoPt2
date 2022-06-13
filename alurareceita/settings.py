@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'alura_receita',
         'USER': 'postgres',
-        'PASSWORD': '19202122',
+        'PASSWORD': '0123456789',
         'HOST': 'localhost',
     }
 }
@@ -133,6 +133,7 @@ STATICFILES_DIRS = [
 #Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+<<<<<<< HEAD
 
 # Messages
 from django.contrib.messages import constants as messages
@@ -140,3 +141,5 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'success',
 }
+=======
+>>>>>>> 5da6ca41ca9000eff2a8a456a6a479a7a9993dbb
