@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'wxkw_ji+kpf8kv1uilw@chyelj$ht#o2&wb!!s!q%ywe&vn3we'
+SECRET_KEY = 'zuxr3q9(pe7@slr7u5n48woe1hrgp03!hljn%575+n6aendqkn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,16 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'usuarios',
-    'pessoas',
     'receitas',
+    'usuarios',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles'
-    
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -82,8 +80,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'alura_receita',
         'USER': 'postgres',
-        'PASSWORD': '0123456789',
-        'HOST': 'localhost',
+        'PASSWORD': '19202122',
+        'HOST': 'localhost'
     }
 }
 
@@ -124,16 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'alurareceita/static')
 ]
-#Media
+
+# Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-<<<<<<< HEAD
 
 # Messages
 from django.contrib.messages import constants as messages
@@ -141,5 +138,6 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'success',
 }
-=======
->>>>>>> 5da6ca41ca9000eff2a8a456a6a479a7a9993dbb
+
+PROJECT_ROOT = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(PROJECT_ROOT, '../apps'))
